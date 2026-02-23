@@ -1,0 +1,9 @@
+int c=0;
+    bool isPowerOfThree(int n) {
+        if(n<pow(3,c))
+            return false;
+        if(n==pow(3,c))
+            return true;
+        c++;
+       return isPowerOfThree(n);
+    }
