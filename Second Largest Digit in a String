@@ -1,0 +1,25 @@
+#include <algorithm>
+class Solution {
+public:
+    int secondHighest(string s) {
+        vector<int> arr; int cnt=0;
+        for(unsigned char c:s)
+        {
+            if(isdigit(c))
+            {
+                int d=c-'0';
+                if (std::find(arr.begin(), arr.end(), d) == arr.end())
+                {
+                    arr.push_back(d);
+                    cnt++;
+                }
+                         
+            }
+        }
+        sort(arr.begin(),arr.end());
+        if(cnt>=2)
+            return arr[cnt-2];
+        else
+            return -1;
+        }
+    };
